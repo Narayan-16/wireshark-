@@ -1,0 +1,40 @@
+The primary goal of Task 5 was to:
+* Capture live network packets. [cite: 2]
+* Identify basic protocols and traffic types within the captured data. [cite: 2]
+
+## Tools Used [cite: 3]
+
+* **Wireshark**: A free and open-source network protocol analyzer used for capturing and interactively Browse the data running on a computer network. [cite: 3]
+* **Terminal**: For generating specific types of network traffic (e.g., `ping`, `dig`) and for general system commands.
+* **Web Browser (Brave/Firefox)**: Used to generate HTTP/HTTPS traffic.
+
+## Methodology
+
+The following steps were performed to complete Task 5:
+
+1.  **Wireshark Installation and Interface Identification**:
+    * Ensured Wireshark was installed and configured for non-root user capturing.
+    * Identified the active network interface (`wlan0` in my case, confirmed via `ip a`) that carries internet traffic.
+
+2.  **Packet Capture Initiation**:
+    * Launched Wireshark and selected the active network interface (`wlan0`) to begin live packet capture.
+
+3.  **Traffic Generation**:
+    * While Wireshark was actively capturing, I generated various types of network traffic to ensure a diverse set of packets for analysis:
+        * **ICMP/DNS Traffic**: Executed `ping -c 4 google.com` in a separate terminal. This generated ICMP (ping requests and replies) and DNS (for resolving `google.com`) packets.
+        * **HTTP Traffic**: Browsed to an unencrypted website, `http://example.com`, using a web browser. This generated cleartext HTTP requests and responses.
+        * **TCP Traffic**: Simply by performing the above actions, underlying TCP (Transmission Control Protocol) packets for establishing and maintaining connections were generated.
+
+4.  **Capture Termination**:
+    * After generating sufficient traffic for approximately one minute, the capture was stopped in Wireshark.
+
+5.  **Protocol Identification and Filtering**:
+    * Utilized Wireshark's display filter bar to isolate and identify specific protocols within the captured data. I successfully identified:
+        * **ICMP**: Filtered with `icmp`.
+        * **DNS**: Filtered with `dns`.
+        * **HTTP**: Filtered with `http`.
+        * **TCP**: Filtered with `tcp`.
+
+6.  **Packet Capture Export**:
+    * The entire captured session was exported as a `.pcap` file (`kali_network_capture.pcap`), which is the standard format for Wireshark captures.
+      
