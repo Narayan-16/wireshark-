@@ -1,6 +1,6 @@
 The primary goal of Task 5 was to:
-* Capture live network packets. [cite: 2]
-* Identify basic protocols and traffic types within the captured data. [cite: 2]
+* Capture live network packets. 
+* Identify basic protocols and traffic types within the captured data. 
 
 ## Tools Used [cite: 3]
 
@@ -10,7 +10,7 @@ The primary goal of Task 5 was to:
 
 ## Methodology
 
-The following steps were performed to complete Task 5:
+The following steps were performed to complete Task :
 
 1.  **Wireshark Installation and Interface Identification**:
     * Ensured Wireshark was installed and configured for non-root user capturing.
@@ -36,5 +36,5 @@ The following steps were performed to complete Task 5:
         * **TCP**: Filtered with `tcp`.
 
 6.  **Packet Capture Export**:
-    * The entire captured session was exported as a `.pcap` file (`kali_network_capture.pcap`), which is the standard format for Wireshark captures.
+    * The entire captured session was exported as a `.pcap` file , which is the standard format for Wireshark captures.
       
